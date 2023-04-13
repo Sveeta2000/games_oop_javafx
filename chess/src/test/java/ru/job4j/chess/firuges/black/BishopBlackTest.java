@@ -35,7 +35,8 @@ class BishopBlackTest {
         Exception exception = Assertions.assertThrows(ImpossibleMoveException.class, () -> {
             bishop1.way(Cell.G8);
         });
-        String expectedMessage = String.format("Could not move by diagonal from %s to %s", bishop1.position(), Cell.G8);
+        String expectedMessage = String.format("Could not move by diagonal from %s to %s",
+                                                bishop1.position(), Cell.G8);
         String actualMessage = exception.getMessage();
         Assertions.assertTrue(actualMessage.contains(expectedMessage));
     }
